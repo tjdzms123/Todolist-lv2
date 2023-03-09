@@ -35,6 +35,7 @@ const initialState = {
   todos: [
     { id: "1", title: "리액트", body: "리액트를 배워봅시다", isDone: false },
   ],
+  todo: { id: 0, title: "", body: "", isDone: false },
 };
 
 const todos = (state = initialState, action) => {
@@ -66,7 +67,7 @@ const todos = (state = initialState, action) => {
     case GET_TODO_BY_ID:
       return {
         ...state,
-        todos: state.todos.find((todo) => todo.id === action.payload),
+        todo: state.todos.find((todo) => todo.id === action.payload),
       };
     default:
       return state;

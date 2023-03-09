@@ -7,7 +7,7 @@ import { getTodoById } from "../redux/modules/todos";
 function Detail() {
   const dispatch = useDispatch();
 
-  const todos = useSelector((state) => state.todos.todos);
+  const todo = useSelector((state) => state.todos.todo);
 
   const { id } = useParams();
   const navigate = useNavigate();
@@ -21,13 +21,13 @@ function Detail() {
       <StDialog>
         <div>
           <StDialogHeader>
-            <div>ID :{todos.id}</div>
+            <div>ID :{todo.id}</div>
             <StButton borderColor="#ddd" onClick={() => navigate("/")}>
               이전으로
             </StButton>
           </StDialogHeader>
-          <StTitle>{todos.title}</StTitle>
-          <StBody>{todos.body}</StBody>
+          <StTitle>{todo.title}</StTitle>
+          <StBody>{todo.body}</StBody>
         </div>
       </StDialog>
     </StContainer>
